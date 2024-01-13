@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akriti Foundation - Donate</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('child3.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 10px;
+            color: white;
+            padding: 10px;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        .home-icon {
+            cursor: pointer;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+        }
+
+        .home-icon img {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+        }
+
+        nav {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: white;
+            text-align: right;
+            display: flex;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .nav-links {
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin-left: 15px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #FBC924;
+        }
+
+        .hamburger {
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            flex-direction: column;
+            align-items: flex-end;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            z-index: 999;
+        }
+
+        .social-icons {
+            display: flex;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            flex-direction: row;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            margin: 5px 0;
+        }
+
+        .social-icons a:hover {
+            color: #FBC924;
+        }
+
+        .donate-container {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            max-width: 90%;
+            margin: 0 auto;
+            color: white;
+            transition: transform 0.3s, width 0.3s;
+        }
+
+        .donate-container h2 {
+            font-size: 20px;
+            color: #FBC924;
+        }
+
+        .donate-container p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .donate-container .qr-code {
+            margin-top: 15px;
+        }
+
+        .donate-container .bank-details {
+            margin-top: 15px;
+        }
+
+        @media screen and (min-width: 601px) {
+            .donate-container:hover {
+                transform: scale(1.05);
+                width: 95%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            .home-icon img {
+                width: 30px;
+                height: 30px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                padding-top: 80px;
+                z-index: 999;
+            }
+
+            .menu a {
+                text-decoration: none;
+                color: white;
+                margin: 15px;
+                font-size: 20px;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+
+            .menu a:hover {
+                color: #FBC924;
+            }
+            .social-icons {
+                display: flex;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                align-items: center;
+                z-index: 1000;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="home-icon">
+        <a href="index.html">
+            <img src="home_logo.png" alt="Home Icon">
+        </a>
+    </div>
+    <h1>Donate</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</header>
+
+<nav>
+    <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="donation.html">Donate</a>
+        <a href="volunteer.html">Volunteer</a>
+    </div>
+</nav>
+
+<div class="menu">
+    <a href="about.html" onclick="toggleMenu()">About</a>
+    <a href="programs.html" onclick="toggleMenu()">Programs</a>
+    <a href="donation.html" onclick="toggleMenu()">Donate</a>
+    <a href="volunteer.html" onclick="toggleMenu()">Volunteer</a>
+</div>
+
+<div class="social-icons">
+    <a href="https://www.instagram.com/akriti.foundations/" target="_blank">
+        <img src="87390.png" alt="Instagram Logo" width="40" height="40">
+    </a>
+    <a href="https://www.linkedin.com/company/akriti-foundation23/" target="_blank">
+        <img src="linkedin-with-circle-icon-512x512-cvyrro5n.png" alt="LinkedIn Logo" width="40" height="40">
+    </a>
+</div>
+
+<div class="donate-container">
+    <h2>Support Our Cause</h2>
+
+    <p>
+        Your generous contribution can make a significant impact on the lives of underprivileged children. Help us create a better future for them through education and support.
+    </p>
+
+    <div class="qr-code">
+        <img src="qr_code.png" alt="QR Code for donation">
+    </div>
+
+    <div class="bank-details">
+        <p>Bank Name: XYZ Bank</p>
+        <p>Account Number: 123456789</p>
+        <p>Account Holder: Akriti Foundation</p>
+        <p>Branch: City Branch</p>
+        <p>IFSC Code: ABCD1234567</p>
+    </div>
+
+</div>
+
+
+<script>
+    function toggleMenu() {
+        const menu = document.querySelector('.menu');
+        menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function hideMenuOnLoad() {
+        const menu = document.querySelector('.menu');
+        menu.style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', hideMenuOnLoad);
+</script>
+
+</body>
+</html>

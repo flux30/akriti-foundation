@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akriti Foundation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('child1.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        header img {
+            width: 75px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .hamburger-icon {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .hamburger-icon div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            flex-direction: column;
+            align-items: flex-end;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            z-index: 999;
+        }
+
+        nav {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: white;
+            text-align: right;
+            display: flex;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .nav-links {
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin-left: 15px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FBC924;
+        }
+
+        .social-icons {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .description-container {
+            text-align: center;
+            margin-top: 40vh;
+        }
+
+        .description {
+            border-top: 3px solid black;
+            border-bottom: 3px solid black;
+            padding: 20px 0;
+            max-width: 800px;
+            margin: 0 auto;
+            color: white;
+        }
+
+        .description p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .highlight-text {
+            color: #FBC924;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 600px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            header img {
+                width: 30px;
+                height: 30px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                padding-top: 80px;
+                z-index: 999;
+            }
+
+            .menu a {
+                text-decoration: none;
+                color: white;
+                margin: 15px;
+                font-size: 20px;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+
+            .menu a:hover {
+                color: #FBC924;
+            }
+
+            .social-icons {
+                display: flex;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                align-items: center;
+                z-index: 1000;
+            }
+
+            .hamburger-icon {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html">
+        <img src="akriti_foundation23_logo.jpg" alt="Akriti Foundation Logo">
+    </a>
+    <div class="hamburger-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</header>
+
+<nav>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="donation.html">Donate</a>
+    <a href="volunteer.html">Volunteer</a>
+</nav>
+
+<div class="menu">
+    <a href="about.html" onclick="toggleMenu()">About</a>
+    <a href="programs.html" onclick="toggleMenu()">Programs</a>
+    <a href="donation.html" onclick="toggleMenu()">Donate</a>
+    <a href="volunteer.html" onclick="toggleMenu()">Volunteer</a>
+</div>
+
+<div class="social-icons">
+    <a href="https://www.instagram.com/akriti.foundations/" target="_blank">
+        <img src="87390.png" alt="Instagram Logo" width="40" height="40">
+    </a>
+    <a href="https://www.linkedin.com/company/akriti-foundation23/" target="_blank">
+        <img src="linkedin-with-circle-icon-512x512-cvyrro5n.png" alt="LinkedIn Logo" width="40" height="40">
+    </a>
+</div>
+
+<div class="description-container">
+    <div class="description">
+        <p>Akriti Foundation - a non-governmental organization (NGO) on a mission to make a meaningful impact in the lives of <span class="highlight-text">underprivileged children</span> by providing them with access to quality education and nurturing their potential.</p>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.querySelector('.menu');
+        menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('expanded');
+        }
+    }
+</script>
+
+</body>
+
+</html>

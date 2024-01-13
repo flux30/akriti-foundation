@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akriti Foundation - About Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontsource-alte-haas-grotesk@1.1.0/css/alte-haas-grotesk.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Alte Haas Grotesk', sans-serif;
+            background: url('child.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 36px;
+            color: white;
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .home-icon {
+            cursor: pointer;
+            position: absolute;
+            top: 5px;
+            left: 1px;
+        }
+
+        .home-icon img {
+            width: 50px;
+            height: 50px;
+            background: transparent;
+        }
+
+        nav {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: white;
+            text-align: right;
+            display: flex;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .nav-links {
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin-left: 15px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #FBC924;
+        }
+
+        .social-icons {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .about-container {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: white;
+            transition: transform 0.3s;
+        }
+
+        .about-container h2 {
+            font-size: 28px;
+            color: #FBC924;
+        }
+
+        .about-container p {
+            font-size: 14px;
+        }
+
+        .about-container:hover {
+            transform: scale(1.05);
+        }
+
+        .hamburger {
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            flex-direction: column;
+            align-items: flex-end;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            z-index: 999;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            margin: 5px 0;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #FBC924;
+        }
+
+        @media screen and (max-width: 600px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .menu {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                padding-top: 80px;
+                z-index: 999;
+            }
+
+            .menu a {
+                text-decoration: none;
+                color: white;
+                margin: 15px;
+                font-size: 20px;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+
+            .menu a:hover {
+                color: #FBC924;
+            }
+
+            .social-icons {
+                display: flex;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                align-items: center;
+                z-index: 1000;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .about-container:hover {
+                transform: none;
+            }
+        }
+
+        .menu.expanded {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <a href="index.html" class="home-icon">
+        <img src="home_logo.png" alt="Home Icon">
+    </a>
+    <h1>About Us</h1>
+</header>
+
+<nav>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="donation.html">Donate</a>
+    <a href="volunteer.html">Volunteer</a>
+</nav>
+
+<div class="menu">
+    <a href="about.html" onclick="toggleMenu()">About</a>
+    <a href="programs.html" onclick="toggleMenu()">Programs</a>
+    <a href="donation.html" onclick="toggleMenu()">Donate</a>
+    <a href="volunteer.html" onclick="toggleMenu()">Volunteer</a>
+</div>
+
+<div class="social-icons">
+    <a href="https://www.instagram.com/akriti.foundations/" target="_blank">
+        <img src="87390.png" alt="Instagram Logo" width="40" height="40">
+    </a>
+    <a href="https://www.linkedin.com/company/akriti-foundation23/" target="_blank">
+        <img src="linkedin-with-circle-icon-512x512-cvyrro5n.png" alt="LinkedIn Logo" width="40" height="40">
+    </a>
+</div>
+
+<div class="about-container">
+    <h2>Akriti Foundation - Empowering the Future</h2>
+    <p>Welcome to Akriti Foundation's LinkedIn page! We are a non-governmental organization (NGO) on a mission to make a meaningful impact in the lives of underprivileged children by providing them with access to quality education and nurturing their potential.</p>
+    <p>At Akriti Foundation, we believe that education is the key to unlocking a child's full potential and breaking the cycle of poverty. Our dedicated team of passionate individuals works tirelessly to ensure that every child, regardless of their socio-economic background, has the opportunity to dream big and achieve their goals.</p>
+    <p>Education Initiatives:</p>
+    <ol>
+        <li>Early Childhood Development: We lay a strong foundation for learning by providing early childhood education, creating a nurturing and stimulating environment for the young minds to grow.</li>
+        <li>Formal Education Support: We offer academic support to children attending schools in economically disadvantaged areas, bridging the learning gaps and empowering them to excel academically.</li>
+        <li>Vocational Training: For older children and adolescents, we provide vocational training to equip them with practical skills, enabling them to secure better job opportunities and become self-reliant.</li>
+    </ol>
+    <p>Community Engagement:</p>
+    <p>At Akriti Foundation, community engagement is at the core of our approach. We collaborate closely with local communities, parents, and schools to understand the unique challenges children face and tailor our initiatives to address their specific needs effectively.</p>
+    <p><em>Making a Difference Together</em></p>
+</div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.querySelector('.menu');
+        menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function hideMenuOnLoad() {
+        const menu = document.querySelector('.menu');
+        menu.style.display = 'none';
+    }
+
+
+    document.addEventListener('DOMContentLoaded', hideMenuOnLoad);
+</script>
+
+</body>
+</html>
